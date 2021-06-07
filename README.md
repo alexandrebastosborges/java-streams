@@ -5,4 +5,12 @@ O arquivo usado no teste foi baixado em https://www.stats.govt.nz/assets/Uploads
 
 Para rodar com o maven:
 
-mvn spring-boot:run -Dspring-boot.run.arguments="A100600"
+time mvn spring-boot:run -Dspring-boot.run.arguments="A100600"
+
+Com o java direto:
+
+time java -jar java-streams-0.0.1-SNAPSHOT.jar A100600
+
+Para comparar com o grep:
+
+ time grep -a -o -E -w 'A100600' ../src/test/resources/Data7602DescendingYearOrder.csv | sort | uniq -c
